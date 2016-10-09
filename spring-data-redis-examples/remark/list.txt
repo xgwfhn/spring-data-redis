@@ -1,0 +1,14 @@
+参考
+http://blog.csdn.net/zhutulang/article/details/52003301
+http://fxzcollege6.iteye.com/blog/2209751
+java之redis篇(spring-data-redis整合) 很详细
+http://www.cnblogs.com/tankaixiong/p/3660075.html
+
+备忘使用spring-data-redis中的redistemplate的一个大坑
+http://www.iteye.com/topic/1125295
+spring data redis RedisTemplate操作redis相关用法
+http://www.cnblogs.com/jifeng/p/4676863.html
+
+redis安装
+http://www.cnblogs.com/zhuhongbao/archive/2013/06/04/3117997.html
+下载 http://os.51cto.com/art/201403/431103.htm
