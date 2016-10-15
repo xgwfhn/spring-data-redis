@@ -1,0 +1,34 @@
+
+常见错误
+http://yuandingjiema.iteye.com/blog/1752553
+http://blog.csdn.net/z69183787/article/details/47131893
+
+http://www.68idc.cn/help/buildlang/ask/20150128194754.html
+
+eclipse中maven项目部署到tomcat
+http://www.cnblogs.com/guodefu909/p/4874549.html
+
+
+
+3、命令部署
+
+　　在部署之前，必须先启动tomcat7服务，C:\Program Files\apache-tomcat-7.0.39\bin\startup.bat
+
+　　找到要部署的工程文件根目录下，执行如下maven命令
+
+　　> mvn clean:install           　　//clean是清理输出文件，install编译打包，在每次打包之前必须执行clean，才能保证发布为最新文件
+
+　　> mvn tomcat7:redeploy  　　//第一次发布 tomcat7:deploy，再次发布 tomcat7:redeploy   如果是使用tomcat7 切记是tomcat7 :redeploy  不是tomcat :redeploy
+
+
+启动的时候如果报错  可以将 webapps下的项目删除  再从新发布
+在eclipse将项目发布到tomcat上时报错
+Exception in thread ""http-bio-8080"-exec-13" java.lang.OutOfMemoryError: PermGe
+解决方法：
+1. 手动设置MaxPermSize大小
+修改TOMCAT_HOME/bin/catalina.bat（Linux下为catalina.sh），
+在“echo "Using CATALINA_BASE:$CATALINA_BASE"”上面加入以下行：
+set JAVA_OPTS=%JAVA_OPTS% -server -XX:PermSize=128M -XX:MaxPermSize=512m
+catalina.sh下为：
+JAVA_OPTS="$JAVA_OPTS -server -XX:PermSize=128M -XX:MaxPermSize=512m"
+

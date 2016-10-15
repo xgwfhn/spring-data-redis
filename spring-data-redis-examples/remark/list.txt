@@ -12,3 +12,6 @@ http://www.cnblogs.com/jifeng/p/4676863.html
 redis安装
 http://www.cnblogs.com/zhuhongbao/archive/2013/06/04/3117997.html
 下载 http://os.51cto.com/art/201403/431103.htm
+
+server3.0异步处理
+http://blog.csdn.net/kuyuyingzi/article/details/18843487

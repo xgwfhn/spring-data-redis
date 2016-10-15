@@ -21,7 +21,7 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
-  </dependencies>
+  </dependencies> 
   <modules>
   	<module>spring-data-redis-examples</module>
   </modules>

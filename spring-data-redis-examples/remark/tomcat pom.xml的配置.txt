@@ -1,0 +1,20 @@
+<plugin>
+          <!-- 这种方式是运行 后将项目打成war包上传到指定的tomcat上,不适合本地开发   适合发布到测试服务器上 -->
+	       	  <groupId>org.apache.tomcat.maven</groupId>
+			  <artifactId>tomcat7-maven-plugin</artifactId>
+			  <version>2.2</version>
+		      <configuration>
+		          <!-- <url>http://localhost:8080/manager</url> -->            <!-- tomcat6部署管理路径 -->
+		           <url>http://localhost:8080/manager/text</url>     <!-- tomcat7部署管理路径 -->
+		           <server>myserver</server> <!-- 在maven /conf/setting.xml中配置server的名称 -->
+		           <port>8080</port>
+		           <path>/</path>  <!-- 上下文-->
+		           <!-- 
+		             <warFile>${project.build.directory}/platform.war</warFile>    我们以war包方式发布，需要指定war包路径。
+        			 <warSourceDirectory>WebContent</warSourceDirectory>    同时要指定war包源码路径
+		            -->
+		           <charset>UTF-8</charset>
+		           <encoding>UTF-8</encoding>
+		           <!-- 运行redeploy命令前，要能正常访问http://localhost:8080/manager-->
+		       </configuration>
+            </plugin>
