@@ -35,7 +35,7 @@ public class AsyncServlet extends HttpServlet {
          AsyncContext ctx = request.startAsync();
         //ctx.setTimeout(30*1000);
         // new Thread(new Executor(ctx)).start();
-         executor.execute(new Executor(ctx));
+        // executor.execute(new Executor(ctx));
         //ctx.start(new Executor(ctx));  
         System.out.println("结束Servlet的时间：" + new Date() + ".");
         request.getRequestDispatcher("/pages/index.jsp").forward(request, response);

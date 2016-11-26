@@ -17,20 +17,9 @@
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<load-on-startup>2</load-on-startup>
 	</servlet>
-	
-   <servlet>
-	   	<display-name>AsyncServlet</display-name>
-	   	<servlet-name>AsyncServlet</servlet-name>
-	   	<servlet-class>com.audi.redis.util.AsyncServlet</servlet-class>
-	   	<async-supported>true</async-supported>
-   </servlet>
 
 	<servlet-mapping>
 		<servlet-name>retwisj</servlet-name>
 		<url-pattern>/</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>AsyncServlet</servlet-name>
-		<url-pattern>/async</url-pattern>
 	</servlet-mapping>
 </web-app>

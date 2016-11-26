@@ -18,6 +18,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.audi.redis.model.User;
 import com.audi.redis.repository.UserDao;
+import com.audi.redis.service.RedisCacheUtil;
 
 
    
@@ -26,14 +27,17 @@ import com.audi.redis.repository.UserDao;
 @ContextConfiguration(locations = "classpath:applicationContext-redis.xml")
 public class UserTest extends AbstractJUnit4SpringContextTests {
 	@Resource
-    private UserDao userDao;    
+    private UserDao userDao;  
+	
+	@Autowired
+    private RedisCacheUtil<User> redisCache;
      
     @Test
     public void saveTest() { 
     	// ApplicationContext ac =  new ClassPathXmlApplicationContext("classpath:applicationContext-redis.xml");
         // UserDao userDAO = (UserDao)ac.getBean("userDAO");
          
-    	User user1 = new User();
+    	 User user1 = new User();
          user1.setId(1);
          user1.setName("obama");
          userDao.saveUser(user1);
@@ -41,5 +45,14 @@ public class UserTest extends AbstractJUnit4SpringContextTests {
          System.out.println(user2.getName());
     }
     
-   
+    @Test
+    public void testGetCache()
+    {
+        /*Map<String,Country> countryMap = redisCacheUtil1.getCacheMap("country");
+        Map<String,City> cityMap = redisCacheUtil.getCacheMap("city");*/
+    	User u=redisCache.getCacheObject("user");
+    	System.out.println(u.getName());
+        
+        
+    }  
 }

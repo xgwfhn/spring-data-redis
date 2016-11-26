@@ -5,7 +5,8 @@
 	xmlns:tx="http://www.springframework.org/schema/tx"
 	xmlns:util="http://www.springframework.org/schema/util"  
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:mvc="http://www.springframework.org/schema/mvc"  
+    xmlns:mvc="http://www.springframework.org/schema/mvc" 
+    xmlns:task="http://www.springframework.org/schema/task" 
     xsi:schemaLocation="
         http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
@@ -18,9 +19,10 @@
         http://www.springframework.org/schema/util
         http://www.springframework.org/schema/util/spring-util.xsd
         http://www.springframework.org/schema/mvc
-        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/task
+    	http://www.springframework.org/schema/task/spring-task.xsd">
     
-     
 	<mvc:resources mapping="/style/**" location="/style/"></mvc:resources>
      <!-- 配置自定扫描的包  扫描dao包  将带有@Repository的类纳入spring ioc管理 并实例化 -->
 	<context:component-scan base-package="com.audi.redis">
